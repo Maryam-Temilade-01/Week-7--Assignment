@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #ccccff;
+}
+.slider {
+  align-items: center;
+  display: flex;
+  margin: 2rem auto;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  border-radius: 15px;
+}
+.flowerslide {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.25s;
+  background-color: black;
+}
+p {
+  color: white;
+  font-size: 20px;
+  font: bold;
+  padding-left: 40%;
+}
+button {
+  opacity: 0;
+}
+.previous,
+.next {
+  background: transparent;
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  font-size: 50px;
+  font-weight: bolder;
+  padding: 20px;
+  position: absolute;
+  transition: opacity 0.25s;
+  z-index: 1;
+  display: block;
+  margin-top: 10%;
+}
+
+.next {
+  
+  margin-left: 82%;
+}
+.previous:hover,
+.next:hover {
+  background-color: rgb(228, 225, 225);
+  opacity: 1;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.flowerslide:hover + .previous {
+  display: block;
+}
